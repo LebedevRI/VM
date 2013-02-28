@@ -7,6 +7,8 @@
 
 using namespace std;
 
+void iterate(double a, double b, double M, double m);
+
 void iterate(double a, double b, double M, double m) {
 	double Alpha = 2/(M+m);
 	double q = (M-m)/(M+m);
@@ -43,7 +45,7 @@ int main(int argc, char **argv) {
 	const double M = max(atof(argv[3]), atof(argv[4]));
 	const double m = min(atof(argv[3]), atof(argv[4]));
 
-	std::cout.precision(-log10(Eps));
+	std::cout.precision(-(int)log10(Eps));
 	std::cout.setf( std::ios::fixed, std::ios::floatfield);
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;

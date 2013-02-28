@@ -7,20 +7,22 @@
 
 using namespace std;
 
-void tabulate (float a, float b, float step) {
+void tabulate (double a, double b, double step);
+
+void tabulate (double a, double b, double step) {
 	std::cout << "x" << "\t\t" << "Pm(x)" << "\t\t" << "Pm'(x)" << std::endl;
-	for(float x = a; x<b; x+=step) {
+	for(double x = a; x<b; x+=step) {
 		std::cout << x << "\t" << f(x) << "\t" << df(x) << std::endl;
 
 	}
 }
 
 int main(int argc, char **argv) {
-	const float a = min(atof(argv[1]), atof(argv[2]));
-	const float b = max(atof(argv[1]), atof(argv[2]));
-	const float step = atof(argv[3]);
+	const double a = min(atof(argv[1]), atof(argv[2]));
+	const double b = max(atof(argv[1]), atof(argv[2]));
+	const double step = atof(argv[3]);
 
-	std::cout.precision(-log10(Eps));
+	std::cout.precision(-(int)log10(Eps));
 	std::cout.setf( std::ios::fixed, std::ios::floatfield);
 
 	std::cout << "a = " << a << std::endl;
