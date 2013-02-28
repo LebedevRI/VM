@@ -1,5 +1,4 @@
+cmake_minimum_required(VERSION 2.8)
 project(vm)
 
-add_executable(vm main.cpp)
-
-install(TARGETS vm RUNTIME DESTINATION bin)
+add_subdirectory(LR2)
