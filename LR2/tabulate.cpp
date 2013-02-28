@@ -10,7 +10,8 @@ using namespace std;
 void tabulate (float a, float b, float step) {
 	std::cout << "x" << "\t\t" << "Pm(x)" << "\t\t" << "Pm'(x)" << std::endl;
 	for(float x = a; x<b; x+=step) {
-		printf("%f\t%f\t%f\n", x, f(x), df(x));
+		std::cout << x << "\t" << f(x) << "\t" << df(x) << std::endl;
+
 	}
 }
 
@@ -20,7 +21,8 @@ int main(int argc, char **argv) {
 	const float step = atof(argv[3]);
 
 	std::cout.precision(-log10(Eps));
-	std::cout.setf( std::ios::fixed );
+	std::cout.setf( std::ios::fixed, std::ios::floatfield);
+
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
 	std::cout << "step = " << step << std::endl << std::endl;

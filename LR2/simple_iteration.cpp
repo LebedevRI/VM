@@ -43,7 +43,7 @@ int main(int argc, char **argv) {
 	const double M = max(atof(argv[3]), atof(argv[4]));
 	const double m = min(atof(argv[3]), atof(argv[4]));
 
-	std::cout.precision(9);
+	std::cout.precision(-log10(Eps));
 	std::cout.setf( std::ios::fixed, std::ios::floatfield);
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
