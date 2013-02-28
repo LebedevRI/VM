@@ -16,7 +16,7 @@ void iterate(double a, double b, double M, double m) {
 
 	std::cout << "Alpha = " << Alpha << std::endl;
 	std::cout << "q = " << q << std::endl << std::endl;
-	std::cout.setf( std::ios::scientific );
+	std::cout.setf(std::ios::scientific);
 	std::cout << "Eps1 = " << Eps1 << std::endl << std::endl;
 
 	double x = (a+b)/2;
@@ -26,17 +26,23 @@ void iterate(double a, double b, double M, double m) {
 	std::cout << "n" << "\t" << "x(n)" << "\t\t" << "|x(n)-x(n-1)|" << std::endl;
 
 	do {
-		if(n>0) {x_ = x;
-		x = x_ - Alpha*f(x_);}
+		if(n>0) {
+			x_ = x;
+			x = x_ - Alpha*f(x_);
+		}
 
-		std::cout.setf( std::ios::fixed, std::ios::floatfield );
+		std::cout.setf(std::ios::fixed, std::ios::floatfield);
 		std::cout << n << "\t" << x << "\t";
 
-		std::cout.setf( std::ios::scientific, std::ios::floatfield );
+		std::cout.setf(std::ios::scientific, std::ios::floatfield);
 		std::cout << fabs(x-x_) << std::endl;
 
 		n++;
 	} while(fabs(x-x_) >= fabs(Eps1));
+
+	std::cout.setf(std::ios::fixed, std::ios::floatfield);
+	std::cout << std::endl << "x = " << x << " \u00B1 " << Eps << std::endl
+	<< "Количество итераций n = " << n-1 << std::endl;
 }
 
 int main(int argc, char **argv) {
@@ -46,7 +52,7 @@ int main(int argc, char **argv) {
 	const double m = min(atof(argv[3]), atof(argv[4]));
 
 	std::cout.precision(-(int)log10(Eps));
-	std::cout.setf( std::ios::fixed, std::ios::floatfield);
+	std::cout.setf(std::ios::fixed, std::ios::floatfield);
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
 	std::cout << "M = " << M << std::endl;

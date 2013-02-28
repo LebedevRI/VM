@@ -12,8 +12,9 @@ void tabulate (double a, double b, double step);
 void tabulate (double a, double b, double step) {
 	std::cout << "x" << "\t\t" << "Pm(x)" << "\t\t" << "Pm'(x)" << std::endl;
 	for(double x = a; x<b; x+=step) {
-		std::cout << x << "\t" << f(x) << "\t" << df(x) << std::endl;
-
+		if(f(x-step)*f(x)<0 || f(x)*f(x+step)<0) {
+			std::cout << x << "\t" << f(x) << "\t" << df(x) << std::endl;
+		}
 	}
 }
 
@@ -23,7 +24,7 @@ int main(int argc, char **argv) {
 	const double step = atof(argv[3]);
 
 	std::cout.precision(-(int)log10(Eps));
-	std::cout.setf( std::ios::fixed, std::ios::floatfield);
+	std::cout.setf(std::ios::fixed, std::ios::floatfield);
 
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
