@@ -19,6 +19,11 @@ void tabulate (double a, double b, double step) {
 }
 
 int main(int argc, char **argv) {
+	if(argc != 4) {
+		std::cout << argv[0] << " a b h" << std::endl;
+		return 0;
+	}
+
 	const double a = min(atof(argv[1]), atof(argv[2]));
 	const double b = max(atof(argv[1]), atof(argv[2]));
 	const double step = atof(argv[3]);

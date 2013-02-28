@@ -46,6 +46,11 @@ void iterate(double a, double b, double M, double m) {
 }
 
 int main(int argc, char **argv) {
+	if(argc != 5) {
+		std::cout << argv[0] << " a b M m" << std::endl;
+		return 0;
+	}
+
 	const double a = min(atof(argv[1]), atof(argv[2]));
 	const double b = max(atof(argv[1]), atof(argv[2]));
 	const double M = max(atof(argv[3]), atof(argv[4]));
