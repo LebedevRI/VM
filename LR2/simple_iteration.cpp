@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void iterate(float a, float b, float M, float m) {
+void iterate(double a, double b, double M, double m) {
 	double Alpha = 2/(M+m);
 	double q = (M-m)/(M+m);
 	double Eps1 = ((1-q)/q)*Eps;
